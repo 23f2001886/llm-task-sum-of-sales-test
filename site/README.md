@@ -1,19 +1,18 @@
-# Sales Dashboard
+# Sum of Sales Test
 
-This project is a simple sales dashboard that displays product sales data. Users can filter the data by region and select the currency for sales display.
+This web application displays a table of product sales with options to filter by currency and region.
 
 ## Features
-- Product table displaying sales data
-- Currency selector to choose the display currency
-- Region filter to narrow down the displayed products
+- Product table displaying sales data.
+- Currency selector to view sales in different currencies (USD, EUR, GBP).
+- Region filter to display products based on geographical regions.
 
-## Setup
-1. Clone the repository.
-2. Open `index.html` in a web browser.
+## How to Use
+1. Select a currency from the dropdown to view sales in that currency.
+2. Use the region filter to narrow down the products displayed based on the selected region.
 
-## Usage
-- Select a currency from the dropdown to change the displayed sales amounts.
-- Use the region filter to display products from specific regions.
+## Installation
+Clone the repository and open `index.html` in your web browser.
 
 ## License
 This project is licensed under the MIT License.
