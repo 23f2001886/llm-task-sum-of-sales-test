@@ -1,20 +1,19 @@
-# Sum of Sales
+# Sales Dashboard
 
-This web application calculates the total sales of products based on selected currency and region.
+This project is a simple sales dashboard that displays product sales data. Users can filter the data by region and select the currency for sales display.
 
 ## Features
-- Product table displaying product names, sales, and regions.
-- Currency selector to choose the currency for total sales calculation.
-- Region filter to display products based on selected region.
+- Product table displaying sales data
+- Currency selector to choose the display currency
+- Region filter to narrow down the displayed products
 
-## Installation
+## Setup
 1. Clone the repository.
 2. Open `index.html` in a web browser.
 
 ## Usage
-- Select a currency from the dropdown to see total sales in that currency.
-- Use the region filter to narrow down the products displayed in the table.
-- Click the 'Calculate Sum of Sales' button to see the total sales amount.
+- Select a currency from the dropdown to change the displayed sales amounts.
+- Use the region filter to display products from specific regions.
 
 ## License
 This project is licensed under the MIT License.

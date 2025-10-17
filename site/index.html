@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum of Sales</title>
+    <title>Sales Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Sum of Sales</h1>
-    <div>
-        <label for="currency-selector">Select Currency:</label>
-        <select id="currency-selector">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-        </select>
-    </div>
-    <div>
-        <label for="region-filter">Select Region:</label>
-        <select id="region-filter">
-            <option value="all">All</option>
-            <option value="north-america">North America</option>
-            <option value="europe">Europe</option>
-            <option value="asia">Asia</option>
-        </select>
-    </div>
-    <table id="product-table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Sales</th>
-                <th>Region</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Product rows will be dynamically inserted here -->
-        </tbody>
-    </table>
-    <button id="calculate-sum">Calculate Sum of Sales</button>
-    <div id="result"></div>
+    <header>
+        <h1>Sales Dashboard</h1>
+        <div>
+            <label for="currency-selector">Select Currency:</label>
+            <select id="currency-selector">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+        </div>
+        <div>
+            <label for="region-filter">Select Region:</label>
+            <select id="region-filter">
+                <option value="all">All</option>
+                <option value="north-america">North America</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <table id="product-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Sales</th>
+                    <th>Currency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be populated here -->
+            </tbody>
+        </table>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

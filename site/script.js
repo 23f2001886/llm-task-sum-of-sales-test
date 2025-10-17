@@ -1,39 +1,38 @@
-const rates = require('./rates.json');
+document.addEventListener('DOMContentLoaded', function() {
+    const currencySelector = document.getElementById('currency-selector');
+    const regionFilter = document.getElementById('region-filter');
+    const productTableBody = document.querySelector('#product-table tbody');
 
-const products = [
-    { name: 'Product A', sales: 100, region: 'north-america' },
-    { name: 'Product B', sales: 200, region: 'europe' },
-    { name: 'Product C', sales: 150, region: 'asia' },
-    { name: 'Product D', sales: 300, region: 'north-america' },
-];
+    // Sample data for products
+    const products = [
+        { name: 'Product A', sales: 100, region: 'north-america' },
+        { name: 'Product B', sales: 200, region: 'europe' },
+        { name: 'Product C', sales: 150, region: 'asia' }
+    ];
 
-const currencySelector = document.getElementById('currency-selector');
-const regionFilter = document.getElementById('region-filter');
-const productTable = document.getElementById('product-table').getElementsByTagName('tbody')[0];
-const resultDiv = document.getElementById('result');
+    function updateTable() {
+        const selectedCurrency = currencySelector.value;
+        const selectedRegion = regionFilter.value;
+        productTableBody.innerHTML = '';
 
-function populateTable() {
-    productTable.innerHTML = '';
-    const selectedRegion = regionFilter.value;
-    const filteredProducts = products.filter(product => selectedRegion === 'all' || product.region === selectedRegion);
-    filteredProducts.forEach(product => {
-        const row = productTable.insertRow();
-        row.insertCell(0).innerText = product.name;
-        row.insertCell(1).innerText = product.sales;
-        row.insertCell(2).innerText = product.region;
-    });
-}
+        const filteredProducts = products.filter(product => {
+            return selectedRegion === 'all' || product.region === selectedRegion;
+        });
 
-function calculateSum() {
-    const selectedCurrency = currencySelector.value;
-    const selectedRegion = regionFilter.value;
-    const filteredProducts = products.filter(product => selectedRegion === 'all' || product.region === selectedRegion);
-    const totalSales = filteredProducts.reduce((sum, product) => sum + product.sales, 0);
-    const convertedTotal = totalSales * rates[selectedCurrency];
-    resultDiv.innerText = `Total Sales in ${selectedCurrency}: ${convertedTotal.toFixed(2)}`;
-}
+        filteredProducts.forEach(product => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${product.name}</td><td>${convertCurrency(product.sales, selectedCurrency)}</td><td>${selectedCurrency}</td>`;
+            productTableBody.appendChild(row);
+        });
+    }
 
-currencySelector.addEventListener('change', calculateSum);
-regionFilter.addEventListener('change', populateTable);
-document.getElementById('calculate-sum').addEventListener('click', calculateSum);
-populateTable();
+    function convertCurrency(amount, currency) {
+        // Placeholder for currency conversion logic
+        return amount; // Return the amount as is for now
+    }
+
+    currencySelector.addEventListener('change', updateTable);
+    regionFilter.addEventListener('change', updateTable);
+
+    updateTable(); // Initial table population
+});
